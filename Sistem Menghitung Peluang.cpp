@@ -14,7 +14,7 @@ int main (){
   cin >> pilihan;
 
   switch (pilihan){
-    case 1:{
+    case 1:
       int kejadian, percobaan;
       cout << "Masukkan total kejadian berhasil: ";
       cin >> kejadian;
@@ -22,7 +22,7 @@ int main (){
       cin >> percobaan;
       cout << "Persentas peluang: " << fixed << setprecision(2) << hitungPeluangSederhana(kejadian, percobaan) << "%" << endl; 
       break;  
-    } default:
+    default:
       cout << "Pilihan tidak valid!" << endl;
       break;
   }
