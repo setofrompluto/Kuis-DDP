@@ -12,16 +12,17 @@ double peluangGabungan(int kejadianA, int kejadianB, int kejadianKeduanya, int t
     double peluangKeduanya = static_cast<double>(kejadianKeduanya) / totalPercobaan;
     return (peluangA + peluangB - peluangKeduanya) * 100;
 }
-double peluangBersyarat(int kejadianKeduanya, int kejadianB)
+double peluangBersyarat(int seluruhKejadian, int kejadian2)
 {
-    return static_cast<double>(kejadianKeduanya) / kejadianB * 100;
+    return static_cast<double>(seluruhKejadian) / kejadian2 * 100;
 }
 int main (){
   int pilihan;
   cout << "Sistem Penghitung Persentase Peluang" << endl;
   cout << "1. Persentase Peluang Sederhana" << endl;
   cout << "2. Persentase Peluang Gabungan" << endl;
-  cout << "Pilih jenis peluang (1/2a): ";
+  cout << "3. Persentase Peluang Bersyarat" << endl;
+  cout << "Pilih jenis peluang (1/2/3): ";
   cin >> pilihan;
 
   switch (pilihan){
@@ -45,6 +46,15 @@ int main (){
         cout << "Masukkan total percobaan: ";
         cin >> totalPercobaan;
         cout << "Persentase peluang gabungan: " << fixed << setprecision(2) << peluangGabungan (kejadianA, kejadianB, kejadianKeduanya, totalPercobaan) << "%\n";
+        break;
+
+    case 3:
+        int seluruhKejadian, kejadian2;
+        cout << "Masukkan jumlah kejadian A dan B: ";
+        cin >> seluruhKejadian;
+        cout << "Masukkan jumlah kejadian B: ";
+        cin >> kejadian2;
+        cout << "Persentase peluang bersyarat: " << fixed << setprecision(2) << peluangBersyarat(seluruhKejadian, kejadian2) << "%\n";
         break;
     
     default:
